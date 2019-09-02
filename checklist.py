@@ -37,24 +37,31 @@ def mark_completed(index):
 
 # Selection
 def select(function_code):
+    # Input for create
     if function_code.upper() == "C":
         input_item = user_input("Input item: ")
         create(input_item)
+
+    # Input for Read
     elif function_code.upper() == "R":
         item_index = user_input("Index Number? ")
-        read(item_index)
+        read(int(item_index))
 
+    # Input for List all items
     elif function_code.upper() == "P":
         list_all_items()
 
+    # Input for Update list
     elif function_code.upper() == "U":
+        item_index = user_input("Index Number? ")
+        update(int(item_index), input_item)
 
-        update(item_index, input_item)
-
+    # Input for Delete items
     elif function_code.upper() == "D":
         item_index = user_input("Index Number? ")
-        destroy(item_index)
+        destroy(int(item_index))
 
+    # Input for Quit
     elif function_code.upper() == "Q":
         return False
 
